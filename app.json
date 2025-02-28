@@ -5,18 +5,34 @@
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
-    "scheme": "myapp",
+    "scheme": "newapp",
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundlerIdentifier": "com.newapp.app",
+      "bundleIdentifier": "com.newapp.app"
     },
     "android": {
+      
+     "intentFilters": [
+        {
+          "action": "VIEW",
+          "data": [
+            {
+              "scheme": "newapp",
+              "host": "*.customer-home"
+            }
+          ],
+          "category": ["BROWSABLE", "DEFAULT"]
+        }
+      ],
+      
+      "package": "com.newapp.app",
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      },
-      "package": "com.anonymous.newapp"
+      }
     },
     "web": {
       "bundler": "metro",
@@ -37,6 +53,14 @@
     ],
     "experiments": {
       "typedRoutes": true
+    },
+    "extra": {
+      "router": {
+        "origin": false
+      },
+      "eas": {
+        "projectId": "92a45f67-2823-4fbc-a4a9-c6491cfe5751"
+      }
     }
   }
 }
